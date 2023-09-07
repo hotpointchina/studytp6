@@ -271,32 +271,36 @@
       </div>
 
 
+      <!-- 删除前提示 -->
+      <el-dialog v-model="deleteChooseData.show" title="提示" width="30%" center :align-center="true">
+        <span>确定删除所选内容吗？</span>
+        <template #footer>
+          <span class="dialog-footer">
+            <el-button @click="deleteChooseHandler(false)">取消</el-button>
+            <el-button type="danger" @click="deleteChooseHandler(true)"> 确定 </el-button>
+          </span>
+        </template>
+      </el-dialog>
+
+
+
     </div>
   </div>
 </body>
 <script src="/static/frameWork/vue/main.js"></script>
 <script>
-  // const { createApp, ref } = Vue;
-  // createApp({
-  //   setup() {
-  //     const message = ref('Hello vue!')
-  //     return {
-  //       message
-  //     }
-  //   }
-  // })
-  // .use(ElementPlus)
-  // .mount('#app')
-  
-  
-
   const option = {
     setup() {
       const {
         // Plus,
         Close 
       } = ElementPlusIconsVue;
-      // vant.showToast('提示');
+
+      // const { ElMessage } = 'element-plus';
+      // console.log( ' 【element-plus】 ', elementPlus );
+      // console.log( ' 【 ElMessage 】 ', ElementPlus );
+
+
       const zmockStore = reactive({
         pageTitle: '新增',
         list: [],
@@ -331,37 +335,7 @@
       });
 
 
-      const ztableData = ref([
-        {
-          id:'11',
-          date: '2016-05-03',
-          name: 'Tom',
-          address: 'No. 189, Grove St, Los Angeles',
-        },
-        {
-          id:'11',
-          date: '2016-05-02',
-          name: 'Tom',
-          address: 'No. 189, Grove St, Los Angeles',
-        },
-        {
-          id:'11',
-          date: '2016-05-04',
-          name: 'Tom',
-          address: 'No. 189, Grove St, Los Angeles',
-        },
-        {
-          id:'11',
-          date: '2016-05-01',
-          name: 'Tom',
-          address: 'No. 189, Grove St, Los Angeles',
-        },
-      ]);
-
       
-      
-
-
 
 
       // table 数据
@@ -432,22 +406,52 @@
         multipleSelectionNumber.value = val.length
       };
 
-      // 批量删除
+
+      // 删除选择的数据
+      const deleteChooseData = reactive({
+        show:false,
+        // decision:false,
+        rowData:{}
+      });
+      // 删除
       const deleteChoose = ( obj ) => {
         console.log( ' deleteChoose obj -> ', obj );
+        deleteChooseData.rowData = {...obj};
+        deleteChooseData.show = true;
+      };
+      // 删除前的弹窗
+      const deleteChooseHandler = (boolean)=>{
+        deleteChooseData.decision = boolean;
+        if( !boolean ){return}
 
         axios({
           method: 'post',
           url: '/certificatesSingleDelete',
           data:{
-            lineId: obj.line_id
+            lineId: deleteChooseData.rowData.line_id
           }
         }).then(res=>{
           console.log( ' deleteChoose res -> ', res );
-          getList();
+          if( res.data.code == '1' ){
+            ElementPlus.ElMessage({
+              type: 'success',
+              message: res.data.msg,
+            });
+            getList();
+          }else{
+            ElementPlus.ElMessage({
+              type: 'error',
+              message: res.data.msg,
+            })
+          }
         });
 
+        deleteChooseData.show = false;
       };
+
+      
+
+      
 
       // 查看详情
       const detailClick = (row) => {
@@ -455,30 +459,6 @@
         tableData.detailShow = true;
       };
 
-      const getCList = async()=>{
-        axios({
-          method: 'post',
-          url: '/certificatesList',
-          data: {
-            ...zmockStore.queryInfo
-          }
-        }).then(res=>{
-          console.log( ' getCList res -> ', res );
-          if( Array.isArray(res.data.data) ){
-            // 列表数据整理
-            zmockStore.list.length = 0;
-            res.data.data.forEach(it=>{
-              zmockStore.list.push(it);
-            });
-            // 页面数据
-            zmockStore.total = res.data.total;
-            zmockStore.pageSize = res.data.pageSize;
-            zmockStore.currentPage = res.data.currentPage;
-          }
-
-
-        });
-      };
 
       // 获取 table 列表数据
       const getList = async () => {
@@ -552,8 +532,20 @@
           data
         }).then(res=>{
           console.log( ' addHandler res -> ', res );
-          readyAdd();
-          getList();
+          
+          if( res.data.code == '1' ){
+            ElementPlus.ElMessage({
+              type: 'success',
+              message: res.data.msg,
+            });
+            readyAdd();
+            getList();
+          }else{
+            ElementPlus.ElMessage({
+              type: 'error',
+              message: res.data.msg,
+            })
+          }
         });
 
       };
@@ -599,32 +591,12 @@
 
         addHandler(data);
 
-
-        // let modal = 'add';
-        // switch (modal) {
-        //   case 'cancel':
-        //     isShowEditPageData.value = false;
-        //     return;
-
-        //   case 'add':
-        //     addHandler(data);
-        //     break;
-
-        //   case 'modify':
-        //     saveEdited(data);
-        //     break;
-        // }
-
-        // 如果需要在此请求列表，开放下一行的注释
-        // getList();
         isShowEditPageData.value = false;
       };
 
 
-      // 批量操作
-      const functionHandler = () => {
-        console.log('批量操作');
-      };
+
+
       // 查询
       function searchList(obj) {
         console.log( ' searchList obj -> ', obj );
@@ -652,7 +624,7 @@
         tableData,
         multipleSelectionNumber, // table 复选框已选择的个数
         handleSelectionChange, // table 复选框 被选取
-        deleteChoose, // 批量删除
+        
         detailClick, // 查看详情
         handleSizeChange, // 每页显示量列表点击
         handleCurrentChange, // 点击页码
@@ -661,15 +633,18 @@
         zmockStore,
         // 新增/编辑 页面
         modifyHandler,
-        // editPage,
+        
         submitEditPage,
         isShowEditPageData,
 
         // 查询
         searchList,
         tableAdd, // 新增、添加
-        ztableData,
-        functionHandler, // 批量操作
+        
+        // 删除
+        deleteChoose, 
+        deleteChooseData,
+        deleteChooseHandler,
       }
     }
   };
