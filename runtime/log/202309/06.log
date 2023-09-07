@@ -1,0 +1,133 @@
+[2023-09-06T09:53:08+08:00][error] [2]Undefined variable $type[D:\PHP\wamp64\www\studytp6\runtime\temp\d58fbaa087b8417c55f8b8c90e0adf70.php:10]
+[2023-09-06T10:02:54+08:00][error] [0]模板文件不存在:D:\PHP\wamp64\www\studytp6\view\certificates\index.html[D:\PHP\wamp64\www\studytp6\vendor\topthink\think-view\src\Think.php:128]
+[2023-09-06T10:04:34+08:00][error] [0]模板文件不存在:D:\PHP\wamp64\www\studytp6\view\certificates\index.html[D:\PHP\wamp64\www\studytp6\vendor\topthink\think-view\src\Think.php:128]
+[2023-09-06T10:04:36+08:00][error] [0]模板文件不存在:D:\PHP\wamp64\www\studytp6\view\certificates\index.html[D:\PHP\wamp64\www\studytp6\vendor\topthink\think-view\src\Think.php:128]
+[2023-09-06T10:05:08+08:00][error] [0]语法错误: unexpected token "}", expecting ";"[D:\PHP\wamp64\www\studytp6\app\controller\Certificates.php:16]
+[2023-09-06T10:05:19+08:00][error] [0]模板文件不存在:D:\PHP\wamp64\www\studytp6\view\certificates\index.html[D:\PHP\wamp64\www\studytp6\vendor\topthink\think-view\src\Think.php:128]
+[2023-09-06T10:05:20+08:00][error] [0]模板文件不存在:D:\PHP\wamp64\www\studytp6\view\certificates\index.html[D:\PHP\wamp64\www\studytp6\vendor\topthink\think-view\src\Think.php:128]
+[2023-09-06T10:06:41+08:00][error] [2]Undefined variable $type[D:\PHP\wamp64\www\studytp6\runtime\temp\50af8c23b7e1350e4815f1bd7e3c1838.php:10]
+[2023-09-06T10:07:21+08:00][error] [2]Undefined variable $type[D:\PHP\wamp64\www\studytp6\runtime\temp\50af8c23b7e1350e4815f1bd7e3c1838.php:10]
+[2023-09-06T22:32:36+08:00][error] [10501]SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)[D:\ProgramFiles\Development\php\wamp\wamp64\www\studytp6\vendor\topthink\think-orm\src\db\PDOConnection.php:836]
+[2023-09-06T22:42:58+08:00][error] [10501]SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)[D:\ProgramFiles\Development\php\wamp\wamp64\www\studytp6\vendor\topthink\think-orm\src\db\PDOConnection.php:836]
+[2023-09-06T22:43:36+08:00][error] [10501]SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)
+[2023-09-06T22:44:31+08:00][sql] CONNECT:[ UseTime:0.035370s ] mysql:host=116.63.15.45;port=3306;dbname=fina_cert;charset=utf8
+[2023-09-06T22:44:31+08:00][sql] SHOW FULL COLUMNS FROM `pro_cert_info` [ RunTime:0.014623s ]
+[2023-09-06T22:44:31+08:00][sql] SELECT * FROM `pro_cert_info` [ RunTime:0.012800s ]
+[2023-09-06T22:45:12+08:00][sql] CONNECT:[ UseTime:0.018906s ] mysql:host=116.63.15.45;port=3306;dbname=fina_cert;charset=utf8
+[2023-09-06T22:45:12+08:00][sql] SHOW FULL COLUMNS FROM `pro_cert_info` [ RunTime:0.012468s ]
+[2023-09-06T22:45:12+08:00][sql] SELECT * FROM `pro_cert_info` [ RunTime:0.011728s ]
+[2023-09-06T22:47:29+08:00][sql] CONNECT:[ UseTime:0.020008s ] mysql:host=116.63.15.45;port=3306;dbname=fina_cert;charset=utf8
+[2023-09-06T22:47:29+08:00][sql] SHOW FULL COLUMNS FROM `pro_cert_info` [ RunTime:0.012568s ]
+[2023-09-06T22:47:29+08:00][sql] SELECT * FROM `pro_cert_info` [ RunTime:0.012088s ]
+[2023-09-06T22:47:31+08:00][sql] CONNECT:[ UseTime:0.024536s ] mysql:host=116.63.15.45;port=3306;dbname=fina_cert;charset=utf8
+[2023-09-06T22:47:31+08:00][sql] SHOW FULL COLUMNS FROM `pro_cert_info` [ RunTime:0.011678s ]
+[2023-09-06T22:47:31+08:00][sql] SELECT * FROM `pro_cert_info` [ RunTime:0.010434s ]
+[2023-09-06T22:51:57+08:00][sql] CONNECT:[ UseTime:0.020201s ] mysql:host=116.63.15.45;port=3306;dbname=fina_cert;charset=utf8
+[2023-09-06T22:51:57+08:00][sql] SHOW FULL COLUMNS FROM `pro_cert_info` [ RunTime:0.013924s ]
+[2023-09-06T22:51:57+08:00][sql] SELECT * FROM `pro_cert_info` [ RunTime:0.012203s ]
+[2023-09-06T22:51:57+08:00][error] [2]Array to string conversion
+[2023-09-06T22:52:22+08:00][sql] CONNECT:[ UseTime:0.020982s ] mysql:host=116.63.15.45;port=3306;dbname=fina_cert;charset=utf8
+[2023-09-06T22:52:22+08:00][sql] SHOW FULL COLUMNS FROM `pro_cert_info` [ RunTime:0.013893s ]
+[2023-09-06T22:52:22+08:00][sql] SELECT * FROM `pro_cert_info` [ RunTime:0.013000s ]
+[2023-09-06T22:52:22+08:00][error] [2]Array to string conversion
+[2023-09-06T22:52:40+08:00][sql] CONNECT:[ UseTime:0.021168s ] mysql:host=116.63.15.45;port=3306;dbname=fina_cert;charset=utf8
+[2023-09-06T22:52:40+08:00][sql] SHOW FULL COLUMNS FROM `pro_cert_info` [ RunTime:0.012852s ]
+[2023-09-06T22:52:40+08:00][sql] SELECT * FROM `pro_cert_info` [ RunTime:0.012905s ]
+[2023-09-06T22:53:13+08:00][sql] CONNECT:[ UseTime:0.018339s ] mysql:host=116.63.15.45;port=3306;dbname=fina_cert;charset=utf8
+[2023-09-06T22:53:13+08:00][sql] SHOW FULL COLUMNS FROM `pro_cert_info` [ RunTime:0.011649s ]
+[2023-09-06T22:53:13+08:00][sql] SELECT * FROM `pro_cert_info` [ RunTime:0.010480s ]
+[2023-09-06T22:53:13+08:00][error] [0]explode(): Argument #2 ($string) must be of type string, think\response\Json given
+[2023-09-06T22:53:45+08:00][sql] CONNECT:[ UseTime:0.019708s ] mysql:host=116.63.15.45;port=3306;dbname=fina_cert;charset=utf8
+[2023-09-06T22:53:45+08:00][sql] SHOW FULL COLUMNS FROM `pro_cert_info` [ RunTime:0.012633s ]
+[2023-09-06T22:53:45+08:00][sql] SELECT * FROM `pro_cert_info` [ RunTime:0.012484s ]
+[2023-09-06T22:53:45+08:00][error] [0]Object of class think\response\Json could not be converted to string
+[2023-09-06T22:53:46+08:00][sql] CONNECT:[ UseTime:0.018223s ] mysql:host=116.63.15.45;port=3306;dbname=fina_cert;charset=utf8
+[2023-09-06T22:53:46+08:00][sql] SHOW FULL COLUMNS FROM `pro_cert_info` [ RunTime:0.012325s ]
+[2023-09-06T22:53:46+08:00][sql] SELECT * FROM `pro_cert_info` [ RunTime:0.011726s ]
+[2023-09-06T22:53:46+08:00][error] [0]Object of class think\response\Json could not be converted to string
+[2023-09-06T22:53:47+08:00][sql] CONNECT:[ UseTime:0.018505s ] mysql:host=116.63.15.45;port=3306;dbname=fina_cert;charset=utf8
+[2023-09-06T22:53:47+08:00][sql] SHOW FULL COLUMNS FROM `pro_cert_info` [ RunTime:0.011556s ]
+[2023-09-06T22:53:47+08:00][sql] SELECT * FROM `pro_cert_info` [ RunTime:0.011285s ]
+[2023-09-06T22:53:47+08:00][error] [0]Object of class think\response\Json could not be converted to string
+[2023-09-06T22:54:05+08:00][sql] CONNECT:[ UseTime:0.043850s ] mysql:host=116.63.15.45;port=3306;dbname=fina_cert;charset=utf8
+[2023-09-06T22:54:05+08:00][sql] SHOW FULL COLUMNS FROM `pro_cert_info` [ RunTime:0.012975s ]
+[2023-09-06T22:54:05+08:00][sql] SELECT * FROM `pro_cert_info` [ RunTime:0.011824s ]
+[2023-09-06T22:54:05+08:00][error] [0]explode(): Argument #2 ($string) must be of type string, think\response\Json given
+[2023-09-06T22:54:06+08:00][sql] CONNECT:[ UseTime:0.020032s ] mysql:host=116.63.15.45;port=3306;dbname=fina_cert;charset=utf8
+[2023-09-06T22:54:06+08:00][sql] SHOW FULL COLUMNS FROM `pro_cert_info` [ RunTime:0.012851s ]
+[2023-09-06T22:54:06+08:00][sql] SELECT * FROM `pro_cert_info` [ RunTime:0.012376s ]
+[2023-09-06T22:54:06+08:00][error] [0]explode(): Argument #2 ($string) must be of type string, think\response\Json given
+[2023-09-06T22:54:27+08:00][sql] CONNECT:[ UseTime:0.020344s ] mysql:host=116.63.15.45;port=3306;dbname=fina_cert;charset=utf8
+[2023-09-06T22:54:27+08:00][sql] SHOW FULL COLUMNS FROM `pro_cert_info` [ RunTime:0.012790s ]
+[2023-09-06T22:54:27+08:00][sql] SELECT * FROM `pro_cert_info` [ RunTime:0.012319s ]
+[2023-09-06T22:56:01+08:00][sql] CONNECT:[ UseTime:0.020243s ] mysql:host=116.63.15.45;port=3306;dbname=fina_cert;charset=utf8
+[2023-09-06T22:56:01+08:00][sql] SHOW FULL COLUMNS FROM `pro_cert_info` [ RunTime:0.012348s ]
+[2023-09-06T22:56:01+08:00][sql] SELECT * FROM `pro_cert_info` [ RunTime:0.012384s ]
+[2023-09-06T22:56:59+08:00][sql] CONNECT:[ UseTime:0.020071s ] mysql:host=116.63.15.45;port=3306;dbname=fina_cert;charset=utf8
+[2023-09-06T22:56:59+08:00][sql] SHOW FULL COLUMNS FROM `pro_cert_info` [ RunTime:0.011724s ]
+[2023-09-06T22:56:59+08:00][sql] SELECT * FROM `pro_cert_info` [ RunTime:0.011138s ]
+[2023-09-06T22:57:23+08:00][sql] CONNECT:[ UseTime:0.018068s ] mysql:host=116.63.15.45;port=3306;dbname=fina_cert;charset=utf8
+[2023-09-06T22:57:23+08:00][sql] SHOW FULL COLUMNS FROM `pro_cert_info` [ RunTime:0.011513s ]
+[2023-09-06T22:57:23+08:00][sql] SELECT * FROM `pro_cert_info` [ RunTime:0.011010s ]
+[2023-09-06T22:57:59+08:00][sql] CONNECT:[ UseTime:0.019207s ] mysql:host=116.63.15.45;port=3306;dbname=fina_cert;charset=utf8
+[2023-09-06T22:57:59+08:00][sql] SHOW FULL COLUMNS FROM `pro_cert_info` [ RunTime:0.012321s ]
+[2023-09-06T22:57:59+08:00][sql] SELECT * FROM `pro_cert_info` [ RunTime:0.011783s ]
+[2023-09-06T23:00:14+08:00][sql] CONNECT:[ UseTime:0.018895s ] mysql:host=116.63.15.45;port=3306;dbname=fina_cert;charset=utf8
+[2023-09-06T23:00:14+08:00][sql] SHOW FULL COLUMNS FROM `pro_cert_info` [ RunTime:0.012318s ]
+[2023-09-06T23:00:14+08:00][sql] SELECT * FROM `pro_cert_info` [ RunTime:0.011811s ]
+[2023-09-06T23:00:36+08:00][sql] CONNECT:[ UseTime:0.021538s ] mysql:host=116.63.15.45;port=3306;dbname=fina_cert;charset=utf8
+[2023-09-06T23:00:36+08:00][sql] SHOW FULL COLUMNS FROM `pro_cert_info` [ RunTime:0.014002s ]
+[2023-09-06T23:00:36+08:00][sql] SELECT * FROM `pro_cert_info` [ RunTime:0.013617s ]
+[2023-09-06T23:10:09+08:00][error] [2]require(./DbHandler.php): Failed to open stream: No such file or directory
+[2023-09-06T23:10:53+08:00][error] [2]require(./DbHandler.php): Failed to open stream: No such file or directory
+[2023-09-06T23:11:19+08:00][error] [2]require(./DbHandler.php): Failed to open stream: No such file or directory
+[2023-09-06T23:11:19+08:00][error] [2]require(./DbHandler.php): Failed to open stream: No such file or directory
+[2023-09-06T23:11:28+08:00][error] [2]require(./DbHandler.php): Failed to open stream: No such file or directory
+[2023-09-06T23:14:09+08:00][sql] CONNECT:[ UseTime:0.020798s ] mysql:host=116.63.15.45;port=3306;dbname=fina_cert;charset=utf8
+[2023-09-06T23:14:09+08:00][sql] SHOW FULL COLUMNS FROM `pro_cert_info` [ RunTime:0.013433s ]
+[2023-09-06T23:14:09+08:00][sql] SELECT * FROM `pro_cert_info` [ RunTime:0.013001s ]
+[2023-09-06T23:14:56+08:00][sql] CONNECT:[ UseTime:0.019472s ] mysql:host=116.63.15.45;port=3306;dbname=fina_cert;charset=utf8
+[2023-09-06T23:14:56+08:00][sql] SHOW FULL COLUMNS FROM `pro_cert_info` [ RunTime:0.012191s ]
+[2023-09-06T23:14:56+08:00][sql] SELECT * FROM `pro_cert_info` [ RunTime:0.010957s ]
+[2023-09-06T23:15:28+08:00][error] [2]require(./DbHandler.php): Failed to open stream: No such file or directory
+[2023-09-06T23:15:47+08:00][error] [2]require(./DbHandler.php): Failed to open stream: No such file or directory
+[2023-09-06T23:16:15+08:00][error] [2]include(./DbHandler.php): Failed to open stream: No such file or directory
+[2023-09-06T23:16:17+08:00][error] [2]include(./DbHandler.php): Failed to open stream: No such file or directory
+[2023-09-06T23:16:54+08:00][sql] CONNECT:[ UseTime:0.019959s ] mysql:host=116.63.15.45;port=3306;dbname=fina_cert;charset=utf8
+[2023-09-06T23:16:54+08:00][sql] SHOW FULL COLUMNS FROM `pro_cert_info` [ RunTime:0.012802s ]
+[2023-09-06T23:16:54+08:00][sql] SELECT * FROM `pro_cert_info` [ RunTime:0.012318s ]
+[2023-09-06T23:17:41+08:00][sql] CONNECT:[ UseTime:0.020160s ] mysql:host=116.63.15.45;port=3306;dbname=fina_cert;charset=utf8
+[2023-09-06T23:17:41+08:00][sql] SHOW FULL COLUMNS FROM `pro_cert_info` [ RunTime:0.014395s ]
+[2023-09-06T23:17:41+08:00][sql] SELECT * FROM `pro_cert_info` [ RunTime:0.011029s ]
+[2023-09-06T23:18:24+08:00][sql] CONNECT:[ UseTime:0.031028s ] mysql:host=116.63.15.45;port=3306;dbname=fina_cert;charset=utf8
+[2023-09-06T23:18:24+08:00][sql] SHOW FULL COLUMNS FROM `pro_cert_info` [ RunTime:0.013597s ]
+[2023-09-06T23:18:24+08:00][sql] SELECT * FROM `pro_cert_info` [ RunTime:0.013538s ]
+[2023-09-06T23:18:24+08:00][error] [0]htmlentities(): Argument #1 ($string) must be of type string, think\response\Json given
+[2023-09-06T23:18:57+08:00][sql] CONNECT:[ UseTime:0.019718s ] mysql:host=116.63.15.45;port=3306;dbname=fina_cert;charset=utf8
+[2023-09-06T23:18:57+08:00][sql] SHOW FULL COLUMNS FROM `pro_cert_info` [ RunTime:0.012650s ]
+[2023-09-06T23:18:57+08:00][sql] SELECT * FROM `pro_cert_info` [ RunTime:0.011606s ]
+[2023-09-06T23:18:57+08:00][error] [0]htmlentities(): Argument #1 ($string) must be of type string, think\response\Json given
+[2023-09-06T23:23:15+08:00][sql] CONNECT:[ UseTime:0.036059s ] mysql:host=116.63.15.45;port=3306;dbname=fina_cert;charset=utf8
+[2023-09-06T23:23:15+08:00][sql] SHOW FULL COLUMNS FROM `pro_cert_info` [ RunTime:0.013374s ]
+[2023-09-06T23:23:15+08:00][sql] SELECT * FROM `pro_cert_info` [ RunTime:0.012379s ]
+[2023-09-06T23:24:14+08:00][sql] CONNECT:[ UseTime:0.027251s ] mysql:host=116.63.15.45;port=3306;dbname=fina_cert;charset=utf8
+[2023-09-06T23:24:14+08:00][sql] SHOW FULL COLUMNS FROM `pro_cert_info` [ RunTime:0.012193s ]
+[2023-09-06T23:24:14+08:00][sql] SELECT * FROM `pro_cert_info` [ RunTime:0.011831s ]
+[2023-09-06T23:33:45+08:00][sql] CONNECT:[ UseTime:0.019161s ] mysql:host=116.63.15.45;port=3306;dbname=fina_cert;charset=utf8
+[2023-09-06T23:33:45+08:00][sql] SHOW FULL COLUMNS FROM `pro_cert_info` [ RunTime:0.012398s ]
+[2023-09-06T23:33:45+08:00][sql] SELECT * FROM `pro_cert_info` [ RunTime:0.010926s ]
+[2023-09-06T23:34:33+08:00][sql] CONNECT:[ UseTime:0.019753s ] mysql:host=116.63.15.45;port=3306;dbname=fina_cert;charset=utf8
+[2023-09-06T23:34:33+08:00][sql] SHOW FULL COLUMNS FROM `pro_cert_info` [ RunTime:0.012707s ]
+[2023-09-06T23:34:33+08:00][sql] SELECT * FROM `pro_cert_info` [ RunTime:0.012270s ]
+[2023-09-06T23:37:11+08:00][sql] CONNECT:[ UseTime:0.022720s ] mysql:host=116.63.15.45;port=3306;dbname=fina_cert;charset=utf8
+[2023-09-06T23:37:11+08:00][sql] SHOW FULL COLUMNS FROM `pro_cert_info` [ RunTime:0.013456s ]
+[2023-09-06T23:37:11+08:00][sql] SELECT * FROM `pro_cert_info` [ RunTime:0.013005s ]
+[2023-09-06T23:42:31+08:00][sql] CONNECT:[ UseTime:0.021229s ] mysql:host=116.63.15.45;port=3306;dbname=fina_cert;charset=utf8
+[2023-09-06T23:42:31+08:00][sql] SHOW FULL COLUMNS FROM `pro_cert_info` [ RunTime:0.013873s ]
+[2023-09-06T23:42:31+08:00][sql] SELECT * FROM `pro_cert_info` [ RunTime:0.012937s ]
+[2023-09-06T23:42:58+08:00][sql] CONNECT:[ UseTime:0.020755s ] mysql:host=116.63.15.45;port=3306;dbname=fina_cert;charset=utf8
+[2023-09-06T23:42:58+08:00][sql] SHOW FULL COLUMNS FROM `pro_cert_info` [ RunTime:0.012847s ]
+[2023-09-06T23:42:58+08:00][sql] SELECT * FROM `pro_cert_info` [ RunTime:0.012208s ]
+[2023-09-06T23:44:57+08:00][sql] CONNECT:[ UseTime:0.018466s ] mysql:host=116.63.15.45;port=3306;dbname=fina_cert;charset=utf8
+[2023-09-06T23:44:57+08:00][sql] SHOW FULL COLUMNS FROM `pro_cert_info` [ RunTime:0.011766s ]
+[2023-09-06T23:44:57+08:00][sql] SELECT * FROM `pro_cert_info` [ RunTime:0.010950s ]

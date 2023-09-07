@@ -12,11 +12,6 @@
 // [ 应用入口文件 ]
 namespace think;
 
-
-echo '首页';
-
-
-
 require __DIR__ . '/../vendor/autoload.php';
 
 // 执行HTTP应用并响应

@@ -1,0 +1,683 @@
+<?php /*a:1:{s:55:"D:\PHP\wamp64\www\studytp6\view\certificates\index.html";i:1694085920;}*/ ?>
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 2.3.12 -->
+  <link rel="stylesheet" href="/static/frameWork/ElementPlus/index.css" />
+  <!-- <link rel="stylesheet" href="https://unpkg.com/element-plus@2.2.28/dist/index.css" /> -->
+
+
+  <link rel="stylesheet" href="/static/style/admcDefaultStyle.css" />
+  <script src="/static/frameWork/tailwindcss/3.3.js"></script>
+  <script src="/static/frameWork/vue/vue.global.js"></script>
+  
+  <!-- 2.3.12 -->
+  <script src="/static/frameWork/ElementPlus/index.full.js"></script>
+  <!-- <script src="https://unpkg.com/element-plus@2.2.28/dist/index.full.js"></script> -->
+
+  <script src="/static/frameWork/ElementPlus/icons-vue.js"></script>
+  <script src="/static/frameWork/ElementPlus/zh-cn.js"></script>
+  <script src="/static/frameWork/axios.min.js"></script>
+  <script src="/static/frameWork/dayjs.min.js"></script>
+
+
+  <!-- <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/vant@4/lib/index.css" /> -->
+
+  <!-- 引入 Vue 和 Vant 的 JS 文件 -->
+  <!-- <script src="https://fastly.jsdelivr.net/npm/vue@3"></script> -->
+  <!-- <script src="https://fastly.jsdelivr.net/npm/vant@4/lib/vant.min.js"></script> -->
+
+
+  <style>
+    .dept_all {
+      padding: 29px 24px;
+    }
+
+    .page_title {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      color: #33344a;
+      font-weight: bold;
+    }
+
+    .page_title::before {
+      content: ' ';
+      display: block;
+      width: 4px;
+      height: 18px;
+      margin: 0 9px 0 0;
+      padding: 0;
+      background: #18AE66;
+    }
+
+    /* table */
+    .gy-form .el-select,
+    .gy-form .el-input-number {
+      width: 100%;
+    }
+
+    .gy-form .el-textarea__inner {
+      max-height: 300px;
+    }
+
+    .table_controll {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      height: 36px;
+      margin: 0 0 4px 0;
+      padding: 11px 17px;
+      background: #F1F7F7 none;
+      box-sizing: border-box;
+    }
+
+    .table_list_status {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .table_list_status::before {
+      content: ' ';
+      display: block;
+      width: 6px;
+      height: 6px;
+      margin: 0 6px 0 0;
+      padding: 0;
+      border: 0;
+      border-radius: 6px;
+    }
+
+    .table_list_status.success::before {
+      background-color: #67c23a;
+    }
+
+    .table_list_status.danger::before {
+      background-color: #e14040;
+    }
+
+    .drawer_title {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      /* margin-bottom:29px; */
+      padding: 23px 36px 24px 36px;
+      background-color: #fff;
+      border-bottom: 1px solid #e8e8e8;
+      color: #33344a;
+      font-size: 18px;
+      line-height: 28px;
+      font-weight: normal;
+      font-style: normal;
+      box-sizing: border-box;
+    }
+
+    .drawer_title svg {
+      color: #cdcdcd;
+    }
+
+    .edit_page {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      z-index: 3;
+      width: 100%;
+      height: calc(100vh - 60px);
+      background: white none;
+    }
+  </style>
+
+
+
+
+  <style type="text/css" id="eltable">
+    .is-group{
+      display: flex;
+      flex-flow: row nowrap;
+    }
+    /* .el-table tr{
+      display: flex;
+      flex-flow: row nowrap;
+      width: 100%;
+    } */
+    .el-table thead.is-group th.el-table__cell {
+      background: var(--el-fill-color-light);
+      display: block;
+      width: 100%;
+    }
+    .el-table .cell {
+      width: 100%;
+    }
+    .el-table__header {
+      display: block;
+    }
+    .el-table__header,
+    .el-table th.el-table__cell,
+    .el-table-fixed-column--right.is-first-column.is-leaf.el-table__cell{
+      background-color: #f5f7fa;
+    }
+  </style>
+
+
+
+  <title>证书管理</title>
+</head>
+
+<body>
+
+
+
+  <div id="app">
+    <div class="dept_all">
+      <div class="search_top flex flex-row justify-between items-center w-full pb-9px">
+        <h1 class="page_title"><?php echo htmlentities($type); ?> 证书管理</h1>
+        <!-- <div class="button-group px-20px">
+          <el-button type="primary" :icon="Plus" @click="tableAdd"> 新增 </el-button>
+        </div> -->
+      </div>
+
+      <!-- 搜索组 begin -->
+      <base-search-component @querytable="searchList" @add="tableAdd"></base-search-component>
+
+      <div class="flex flex-col w-full px-20px">
+        <!-- <div class="table_controll">
+          <span>已选择 {{multipleSelectionNumber}} 项</span>
+          <div class="button_grounp pl-30px">
+            <el-button link type="primary" size="small" @click="functionHandler"
+              style="font-size:14px;">批量操作</el-button>
+            <el-divider direction="vertical" />
+            <el-button link type="primary" size="small" @click="functionHandler"
+              style="font-size:14px;">批量操作</el-button>
+            <el-divider direction="vertical" />
+            <el-button link type="danger" size="small" @click="deleteChoose" style="font-size:14px;">删除</el-button>
+          </div>
+        </div> -->
+
+        <!-- table -->
+        <div class="base-table">
+          <el-table
+            ref="multipleTableRef"
+            :data="zmockStore.list"
+            :maxHeight="tableData.tableHeight"
+            style="width: 100%"
+            stripe
+            @selection-change="handleSelectionChange"
+          >
+            <!-- <el-table-column type="selection" fixed width="55" /> -->
+            <el-table-column prop="certificate_name" label="证书名称" ></el-table-column>
+            <el-table-column prop="create_name" label="创建人"></el-table-column>
+            <el-table-column prop="create_time" label="创建时间" ></el-table-column>
+            
+            <el-table-column fixed="right" label="操作" width="220" >
+              <template #default="scope">
+                <el-button size="small" @click="detailClick( scope.row )">详情</el-button >
+                <!-- <el-button type="primary" size="small" @click="modifyHandler(scope.row)">编辑</el-button> -->
+                <el-button type="danger" size="small" @click="deleteChoose(scope.row)">删除</el-button>
+              </template>
+            </el-table-column>
+          </el-table>
+
+
+          <div class="py-5 flex justify-end">
+            <el-pagination 
+              v-model:currentPage="zmockStore.currentPage" v-model:page-size="zmockStore.pageSize"
+              :page-sizes="zmockStore.pageSizeList" :small="true" :disabled="false"
+              layout="total, sizes, prev, pager, next, jumper" 
+              :total="zmockStore.total"
+              @size-change="handleSizeChange" 
+              @current-change="handleCurrentChange"
+            ></el-pagination>
+          </div>
+        </div>
+
+        <!-- table 查看详情 -->
+        <el-dialog v-model="tableData.detailShow" title="详情" width="60%" top="15vh" :draggable="true">
+          <el-descriptions class="margin-top" :column="3" :size="'default'" :style="''" :border="true">
+            <el-descriptions-item v-for="des in tableData.descriptions" :key="des.prop" :label="des.label">
+              <template v-if="des.prop == 'status'">
+              <el-tag class="ml-2" :type="tableData.detailInfo[des.prop] =='启用'?'success':'danger'">{{ tableData.detailInfo[des.prop] }}</el-tag>
+            </template>
+            <template v-else>
+              {{tableData.detailInfo[des.prop]}}
+            </template>
+            </el-descriptions-item>
+          </el-descriptions>
+        </el-dialog>
+
+        <!-- 新增/编辑 -->
+        <!-- <div class="edit_page" v-if="isShowEditPageData"> -->
+        <el-dialog 
+          v-model="isShowEditPageData" 
+          :title="zmockStore.pageTitle" 
+          width="60%" :draggable="true"
+          :align-center="true"
+        >
+          <edit-page-component
+            :pageTitle="zmockStore.pageTitle"
+            :editData="zmockStore.editData"
+            @submit="submitEditPage"
+          ></edit-page-component>
+        </el-dialog>
+        <!-- </div> -->
+      </div>
+
+
+    </div>
+  </div>
+</body>
+<script src="/static/frameWork/vue/main.js"></script>
+<script>
+  // const { createApp, ref } = Vue;
+  // createApp({
+  //   setup() {
+  //     const message = ref('Hello vue!')
+  //     return {
+  //       message
+  //     }
+  //   }
+  // })
+  // .use(ElementPlus)
+  // .mount('#app')
+  
+  
+
+  const option = {
+    setup() {
+      const {
+        // Plus,
+        Close 
+      } = ElementPlusIconsVue;
+      // vant.showToast('提示');
+      const zmockStore = reactive({
+        pageTitle: '新增',
+        list: [],
+        total: 0,
+        currentPage: 1,
+        pageSize: 10,
+        pageSizeList: [10, 20, 30, 40, 50, 100],
+        editData: {
+          helpCode: '',
+          helpType: '',
+          eventName: '',
+          name: '',
+          gender: '',
+          age: 0,
+          phone: '',
+          idType: '',
+          idNumber: '',
+          province: '',
+          city: '',
+          county: '',
+          address: '',
+          zipCode: '',
+          status: '',
+          date: '',
+          remark: '',
+        },
+        queryInfo: {
+          current: 1,
+          pageSize: 10,
+          certificateName: '',
+        }
+      });
+
+
+      const ztableData = ref([
+        {
+          id:'11',
+          date: '2016-05-03',
+          name: 'Tom',
+          address: 'No. 189, Grove St, Los Angeles',
+        },
+        {
+          id:'11',
+          date: '2016-05-02',
+          name: 'Tom',
+          address: 'No. 189, Grove St, Los Angeles',
+        },
+        {
+          id:'11',
+          date: '2016-05-04',
+          name: 'Tom',
+          address: 'No. 189, Grove St, Los Angeles',
+        },
+        {
+          id:'11',
+          date: '2016-05-01',
+          name: 'Tom',
+          address: 'No. 189, Grove St, Los Angeles',
+        },
+      ]);
+
+      
+      
+
+
+
+
+      // table 数据
+      const tableData = reactive({
+        tableHeight: '50vh',
+        seachGroupInfo: { status: false, height: '70' },
+        detailShow: false,
+        descriptions: [
+          {
+            prop: 'certificate_name',
+            label: '证书名称',
+          },
+          {
+            prop: 'create_name',
+            label: '创建人',
+          },
+          {
+            prop: 'create_time',
+            label: '创建时间',
+          },
+          
+        ],
+        detailInfo: {
+          helpCode: '',
+          helpType: '',
+          name: '',
+          gender: '',
+          age: 0,
+          phone: '',
+          idType: '',
+          idNumber: '',
+          province: '',
+          city: '',
+          county: '',
+          address: '',
+          zipCode: '',
+          status: '',
+          date: '',
+        },
+      });
+
+      // ==== 添加 table 的高度自适应 begin
+      const isFolder = (obj = tableData.seachGroupInfo) => {
+        let height = {
+          body: document.body.offsetHeight,
+          subtract: 64 + 24 + 41 + 36 + 63 + 40 + parseInt(obj.height),
+          str: ''
+        };
+        height.str = height.body - height.subtract + '';
+        tableData.tableHeight = height.str;
+        tableData.seachGroupInfo = { ...obj };
+      };
+      isFolder();
+      window.onresize = () => { isFolder() };
+      // ==== 添加 table 的高度自适应 begin
+
+      // table 的 REF
+      const multipleTableRef = ref();
+      // table 复选框已选择的行
+      const multipleSelection = ref([]);
+      // table 复选框已选择的个数
+      const multipleSelectionNumber = ref(0);
+
+
+      // table 复选框 被选取
+      const handleSelectionChange = (val) => {
+        multipleSelection.value = val
+        multipleSelectionNumber.value = val.length
+      };
+
+      // 批量删除
+      const deleteChoose = ( obj ) => {
+        console.log( ' deleteChoose obj -> ', obj );
+
+        axios({
+          method: 'post',
+          url: '/certificatesSingleDelete',
+          data:{
+            lineId: obj.line_id
+          }
+        }).then(res=>{
+          console.log( ' deleteChoose res -> ', res );
+          getList();
+        });
+
+      };
+
+      // 查看详情
+      const detailClick = (row) => {
+        tableData.detailInfo = row;
+        tableData.detailShow = true;
+      };
+
+      const getCList = async()=>{
+        axios({
+          method: 'post',
+          url: '/certificatesList',
+          data: {
+            ...zmockStore.queryInfo
+          }
+        }).then(res=>{
+          console.log( ' getCList res -> ', res );
+          if( Array.isArray(res.data.data) ){
+            // 列表数据整理
+            zmockStore.list.length = 0;
+            res.data.data.forEach(it=>{
+              zmockStore.list.push(it);
+            });
+            // 页面数据
+            zmockStore.total = res.data.total;
+            zmockStore.pageSize = res.data.pageSize;
+            zmockStore.currentPage = res.data.currentPage;
+          }
+
+
+        });
+      };
+
+      // 获取 table 列表数据
+      const getList = async () => {
+        axios({
+          method: 'post',
+          url: '/certificatesList',
+          data: {
+            ...zmockStore.queryInfo
+          }
+        }).then(res=>{
+          console.log( ' getList res -> ', res );
+          if( Array.isArray(res.data.data) ){
+            // 列表数据整理
+            zmockStore.list.length = 0;
+            res.data.data.forEach(it=>{
+              zmockStore.list.push(it);
+            });
+            // 页面数据
+            zmockStore.total = res.data.total;
+            zmockStore.pageSize = res.data.pageSize;
+            zmockStore.currentPage = res.data.currentPage;
+          }
+        });
+      };
+      
+
+
+
+      // 设置页面信息
+      const setPageInfo = (obj) => {
+        zmockStore.currentPage = obj.currentPage ? obj.currentPage : zmockStore.currentPage;
+        zmockStore.pageSize = obj.pageSize ? obj.pageSize : zmockStore.pageSize;
+        zmockStore.pageSizeList = obj.pageSizeList ? obj.pageSizeList : zmockStore.pageSizeList;
+      };
+
+      // 页码
+      // 每页显示量列表点击
+      const handleSizeChange = (val) => {
+        console.log(`handleSizeChange ${val} items per page`);
+        setPageInfo({
+          currentPage: zmockStore.currentPage,
+          pageSize: val
+        });
+        getList();
+      };
+      // 点击页码
+      const handleCurrentChange = (val) => {
+        console.log(`current page: ${val}`);
+        // setPageInfo({ currentPage: val });
+        zmockStore.queryInfo.current = val;
+        console.log( ' zmockStore.currentPage -> ', {...zmockStore.queryInfo} );
+        getList();
+      };
+
+      // 是否显示 新增 or 编辑 弹窗
+      const isShowEditPageData = ref(false);
+      // 清空 store
+      const readyAdd = async () => {
+        zmockStore.pageTitle = '新增';
+        Object.keys(zmockStore.editData).forEach(key => {
+          zmockStore.editData[key] = key !== 'age' ? '' : 0;
+        });
+      };
+
+      // 新增
+      const addHandler = async(data) => {
+        // zmockStore.list = [{ ...obj }, ...zmockStore.list];
+        axios({
+          method: 'post',
+          url: '/certificatesAdd',
+          data
+        }).then(res=>{
+          console.log( ' addHandler res -> ', res );
+          readyAdd();
+          getList();
+        });
+
+      };
+      const tableAdd = () => {
+        readyAdd();
+        isShowEditPageData.value = true;
+      };
+      // 编辑
+      const editHandler = async (obj) => {
+        zmockStore.pageTitle = '编辑';
+        zmockStore.editData = { ...obj };
+      };
+      const modifyHandler = (obj) => {
+        editHandler(obj);
+        isShowEditPageData.value = true;
+      };
+
+      // 保存编辑
+      const saveEdited = (obj) => {
+        zmockStore.pageTitle = '新增';
+        for (let i = 0; i < zmockStore.list.length; i++) {
+          if (zmockStore.list[i].idNumber === obj.idNumber) {
+            zmockStore.list[i] = { ...zmockStore.list[i], ...obj };
+            break;
+          }
+        }
+
+        Object.keys(zmockStore.editData).forEach(key => {
+          switch (typeof (zmockStore.editData[key])) {
+            case 'string':
+              zmockStore.editData[key] = '';
+              break;
+            case 'number':
+              zmockStore.editData[key] = 0;
+              break;
+          }
+        });
+      };
+
+      // 新增/编辑 页的提交
+      const submitEditPage = (modal, data) => {
+        console.log( ' submitEditPage modal, data -> ',  data );
+
+        addHandler(data);
+
+
+        // let modal = 'add';
+        // switch (modal) {
+        //   case 'cancel':
+        //     isShowEditPageData.value = false;
+        //     return;
+
+        //   case 'add':
+        //     addHandler(data);
+        //     break;
+
+        //   case 'modify':
+        //     saveEdited(data);
+        //     break;
+        // }
+
+        // 如果需要在此请求列表，开放下一行的注释
+        // getList();
+        isShowEditPageData.value = false;
+      };
+
+
+      // 批量操作
+      const functionHandler = () => {
+        console.log('批量操作');
+      };
+      // 查询
+      function searchList(obj) {
+        console.log( ' searchList obj -> ', obj );
+        zmockStore.queryInfo.certificateName = obj.name;
+        getList();
+      }
+
+
+      // console.log( ' ElementPlusIconsVue -> ', ElementPlusIconsVue );
+      onMounted(()=>{
+        // 获取列表数据
+        getList();
+        // console.log( ' onMounted ' );
+      });
+
+
+
+
+      return {
+        // Plus,
+        Close, 
+        // queryTable,
+        // table
+        multipleTableRef,
+        tableData,
+        multipleSelectionNumber, // table 复选框已选择的个数
+        handleSelectionChange, // table 复选框 被选取
+        deleteChoose, // 批量删除
+        detailClick, // 查看详情
+        handleSizeChange, // 每页显示量列表点击
+        handleCurrentChange, // 点击页码
+        isFolder, // 是否折叠了 查询组
+
+        zmockStore,
+        // 新增/编辑 页面
+        modifyHandler,
+        // editPage,
+        submitEditPage,
+        isShowEditPageData,
+
+        // 查询
+        searchList,
+        tableAdd, // 新增、添加
+        ztableData,
+        functionHandler, // 批量操作
+      }
+    }
+  };
+  window.privateVueInitFunction(option);
+</script>
+<script src="/static/components/baseSearch.js"></script>
+<script src="/static/components/editPage.js"></script>
+<script> window.privateVueOnMount() </script>
+
+</html>

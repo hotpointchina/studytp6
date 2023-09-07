@@ -1,0 +1,19 @@
+[2023-09-07T19:34:19+08:00][sql] CONNECT:[ UseTime:0.211879s ] mysql:host=116.63.15.45;port=3306;dbname=fina_cert;charset=utf8
+[2023-09-07T19:34:19+08:00][sql] SHOW FULL COLUMNS FROM `pro_cert_info` [ RunTime:0.020453s ]
+[2023-09-07T19:34:19+08:00][sql] SELECT COUNT(*) AS think_count FROM `pro_cert_info` [ RunTime:0.021344s ]
+[2023-09-07T19:34:19+08:00][sql] SELECT * FROM `pro_cert_info` ORDER BY `create_time` DESC LIMIT 0,10 [ RunTime:0.022139s ]
+[2023-09-07T19:34:24+08:00][sql] CONNECT:[ UseTime:0.173852s ] mysql:host=116.63.15.45;port=3306;dbname=fina_cert;charset=utf8
+[2023-09-07T19:34:24+08:00][sql] SHOW FULL COLUMNS FROM `pro_cert_info` [ RunTime:0.023067s ]
+[2023-09-07T19:34:24+08:00][sql] SELECT COUNT(*) AS think_count FROM `pro_cert_info` [ RunTime:0.019730s ]
+[2023-09-07T19:34:24+08:00][sql] SELECT * FROM `pro_cert_info` ORDER BY `create_time` DESC LIMIT 0,10 [ RunTime:0.019995s ]
+[2023-09-07T19:35:03+08:00][sql] CONNECT:[ UseTime:0.026041s ] mysql:host=116.63.15.45;port=3306;dbname=fina_cert;charset=utf8
+[2023-09-07T19:35:03+08:00][sql] SHOW FULL COLUMNS FROM `pro_cert_info` [ RunTime:0.018081s ]
+[2023-09-07T19:35:03+08:00][sql] SELECT COUNT(*) AS think_count FROM `pro_cert_info` [ RunTime:0.025267s ]
+[2023-09-07T19:35:03+08:00][sql] SELECT * FROM `pro_cert_info` ORDER BY `create_time` DESC LIMIT 0,10 [ RunTime:0.017713s ]
+[2023-09-07T19:35:07+08:00][sql] CONNECT:[ UseTime:0.032718s ] mysql:host=116.63.15.45;port=3306;dbname=fina_cert;charset=utf8
+[2023-09-07T19:35:07+08:00][sql] SHOW FULL COLUMNS FROM `pro_cert_info` [ RunTime:0.020324s ]
+[2023-09-07T19:35:07+08:00][sql] DELETE FROM `pro_cert_info` WHERE  `line_id` = 54 [ RunTime:0.027537s ]
+[2023-09-07T19:35:07+08:00][sql] CONNECT:[ UseTime:0.042315s ] mysql:host=116.63.15.45;port=3306;dbname=fina_cert;charset=utf8
+[2023-09-07T19:35:07+08:00][sql] SHOW FULL COLUMNS FROM `pro_cert_info` [ RunTime:0.022307s ]
+[2023-09-07T19:35:07+08:00][sql] SELECT COUNT(*) AS think_count FROM `pro_cert_info` [ RunTime:0.020543s ]
+[2023-09-07T19:35:07+08:00][sql] SELECT * FROM `pro_cert_info` ORDER BY `create_time` DESC LIMIT 0,10 [ RunTime:0.020491s ]
