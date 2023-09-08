@@ -24,13 +24,13 @@ return [
             // 数据库类型
             'type'            => env('DB_TYPE', 'mysql'),
             // 服务器地址
-            'hostname'        => env('DB_HOST', '116.63.15.45'),
+            'hostname'        => env('DB_HOST', '110.110.0.1'),
             // 数据库名
-            'database'        => env('DB_NAME', 'fina_cert'),
+            'database'        => env('DB_NAME', 'hello'),
             // 用户名
             'username'        => env('DB_USER', 'root'),
             // 密码
-            'password'        => env('DB_PASS', 'Fan123456@'),
+            'password'        => env('DB_PASS', 'root'),
             // 端口
             'hostport'        => env('DB_PORT', '3306'),
             // 数据库连接参数
@@ -38,7 +38,7 @@ return [
             // 数据库编码默认采用utf8
             'charset'         => env('DB_CHARSET', 'utf8'),
             // 数据库表前缀
-            'prefix'          => env('DB_PREFIX', 'pro_cert_'),
+            'prefix'          => env('DB_PREFIX', 'gy_'),
 
             // 数据库部署方式:0 集中式(单一服务器),1 分布式(主从服务器)
             'deploy'          => 0,
